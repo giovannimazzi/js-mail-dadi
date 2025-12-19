@@ -1,5 +1,5 @@
 // # MAIL
-console.log(`%cESERCIZIO MAIL`, "color: yellow");
+/* console.log(`%cESERCIZIO MAIL`, "color: yellow");
 
 //lista invitati
 const guestList = [
@@ -41,4 +41,32 @@ for (let i = 0; i < guestList.length && !isGuest; i++) {
   }
 }
 console.log(outputMsg);
-alert(outputMsg);
+alert(outputMsg); */
+
+// # DADI
+console.log(`%cESERCIZIO DADI`, "color: yellowgreen");
+
+//array dei punti:
+// posizione 0 -> punteggio utente,
+// posizione 1 -> punteggio PC
+const points = [0, 0];
+
+//generazione punteggi
+let pointMsg = "risultato tiro UTENTE: ";
+for (let i = 0; i < points.length; i++) {
+  points[i] = Math.floor(Math.random() * 6) + 1;
+  if (i > 0) {
+    pointMsg = pointMsg.replace("UTENTE", "PC");
+  }
+  console.log(pointMsg + points[i]);
+}
+
+//si decreta il vincitore
+let outputMsg = "Vincitore: PAREGGIO";
+if (points[0] > points[1]) {
+  outputMsg = outputMsg.replace("PAREGGIO", "UTENTE");
+}
+if (points[0] < points[1]) {
+  outputMsg = outputMsg.replace("PAREGGIO", "PC");
+}
+console.log(outputMsg);
