@@ -1,4 +1,5 @@
 // # MAIL
+console.log(`%cESERCIZIO MAIL`, "color: yellow");
 
 //lista invitati
 const guestList = [
@@ -24,3 +25,20 @@ const guestList = [
   "andrea_salvi@gmail.com",
   "marco_venerando@gmail.com",
 ];
+console.table(guestList);
+
+//richiesta indirizzo mail all'utente
+const userMail = prompt("Inserire il proprio indirizzo e-mail:");
+console.log(`userMail: ${userMail}`);
+
+//verifico presenza utente tra gli invitati
+let outputMsg = `L'utente NON risulta presente nell'elenco degli invitati.`;
+let isGuest = false;
+for (let i = 0; i < guestList.length && !isGuest; i++) {
+  isGuest = userMail.toLowerCase() === guestList[i].toLowerCase();
+  if (isGuest) {
+    outputMsg = outputMsg.replace(" NON ", " ");
+  }
+}
+console.log(outputMsg);
+alert(outputMsg);
